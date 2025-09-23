@@ -1,0 +1,58 @@
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+# Entornos virtuales
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Archivos de configuración/editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de compilación
+build/
+dist/
+.eggs/
+*.so
+
+# Logs y cachés
+*.log
+*.pot
+*.pyc
+*.tmp
+*.DS_Store
+.cache/
+coverage/
+htmlcov/
+.tox/
+.mypy_cache/
+.pytest_cache/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# Otros
+*.sqlite3
+*.db
+*.mo
+
+*.csv
+*.parquet
+*.xlsx
+*.json
