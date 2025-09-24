@@ -1,6 +1,6 @@
 # Modelos Fundacionales para Series de tiempo
 
-Aprendiendo el Lenguaje de las Series de Tiempo: AWS Chronos Bolt.
+Conferencia: **Aprendiendo el Lenguaje de las Series de Tiempo: AWS Chronos Bolt.**
 
 ## Descripción
 
