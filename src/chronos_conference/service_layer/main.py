@@ -1,3 +1,5 @@
+# ruff: noqa: F403, F405
+
 import streamlit as st
 import pandas as pd
 
@@ -5,6 +7,7 @@ from chronos_conference.domain.inference import get_forecast
 from chronos_conference.adapters.filter_ts import filter_ts
 from chronos_conference.adapters.model_instance import ChronosForecaster
 from chronos_conference.adapters.ts_plot import get_plot
+from chronos_conference.settings import *
 
 st.title("AWS Community Day Ecuador 2025")
 st.header(
@@ -24,14 +27,17 @@ df = pd.read_csv("../../../data/historical_simulation_9023624.csv")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    min_date = st.date_input("Fecha mínima", value="2022-01-01")
+    min_date = st.date_input("Fecha mínima", value=MIN_PRED_DATE)
 
 with col2:
-    max_date = st.date_input("Fecha máxima", value="2023-06-30")
+    max_date = st.date_input("Fecha máxima", value=MAX_PRED_DATE)
 
 with col3:
     n_steps = st.number_input(
-        "Número de pasos a predecir", min_value=1, max_value=128, value=48
+        "Número de pasos a predecir",
+        min_value=MIN_PRED_DATE_LIMIT,
+        max_value=MAX_PRED_DATE_LIMIT,
+        value=N_PRED_STEPS,
     )
 
 execution_button = st.button("Ejecutar modelo")
@@ -41,17 +47,20 @@ if not execution_button:
 
 with st.spinner("Filtrando datos..."):
     df_useful = filter_ts(
-        df, date_col="datetime", min_date=str(min_date), max_date=str(max_date)
+        df,
+        date_col=HISTORICAL_DATE_COLUMN,
+        min_date=str(min_date),
+        max_date=str(max_date),
     )
 
-model = ChronosForecaster(freq="D")
+model = ChronosForecaster(freq=FREQUENCY)
 
 with st.spinner("Modelo en ejecución..."):
     results = get_forecast(
         df=df_useful,
-        date_col="datetime",
-        target_col="value",
-        item_col="unique_id",
+        date_col=HISTORICAL_DATE_COLUMN,
+        target_col=HISTORICAL_TARGET_COLUMN,
+        item_col=HISTORICAL_ITEM_COLUMN,
         model_instance=model,
     )
 
