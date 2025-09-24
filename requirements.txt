@@ -7,3 +7,6 @@ statsforecast==2.0.1
 ipywidgets
 ipykernel
 pre_commit==4.3.0
+streamlit==1.50.0
+plotly==6.3.0
+nbformat==5.10.4

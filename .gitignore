@@ -52,7 +52,6 @@ htmlcov/
 *.db
 *.mo
 
-*.csv
 *.parquet
 *.xlsx
 *.json

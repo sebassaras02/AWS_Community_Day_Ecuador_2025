@@ -1,3 +1,14 @@
+---
+title: Amazon Chronos Bolt
+emoji: 👁
+colorFrom: gray
+colorTo: purple
+sdk: docker
+pinned: false
+license: mit
+short_description: Large Time-Series Models Amazon 
+---
+
 # Modelos Fundacionales para Series de tiempo
 
 Conferencia: **Aprendiendo el Lenguaje de las Series de Tiempo: AWS Chronos Bolt.**
