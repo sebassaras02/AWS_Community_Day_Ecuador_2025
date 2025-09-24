@@ -56,4 +56,4 @@ htmlcov/
 *.parquet
 *.xlsx
 *.json
-*/AutogluonModels/**
+**/AutogluonModels/**
