@@ -2,6 +2,8 @@ HISTORICAL_DATE_COLUMN = "datetime"
 HISTORICAL_ITEM_COLUMN = "unique_id"
 HISTORICAL_TARGET_COLUMN = "value"
 
+PATH_DATA = "app/data/historical_simulation_9023624.csv"
+
 FREQUENCY = "D"
 
 MIN_PRED_DATE = "2022-01-01"
