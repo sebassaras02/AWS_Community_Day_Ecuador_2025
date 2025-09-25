@@ -7,8 +7,17 @@ COPY src/ src/
 COPY data/ /data
 
 RUN pip install uv
-RUN uv pip install -r requirements.txt
+RUN uv pip install --system -r requirements.txt
 RUN pip install -e .
+
+RUN useradd -m appuser && \
+    mkdir -p /app/cache /app/.streamlit && \
+    chown -R appuser:appuser /app
+
+ENV HF_HOME=/app/cache
+ENV STREAMLIT_CONFIG_DIR=/app/.streamlit
+
+USER appuser
 
 EXPOSE 8501
 
