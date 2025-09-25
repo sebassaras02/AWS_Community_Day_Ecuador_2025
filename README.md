@@ -1,12 +1,14 @@
 ---
-title: Amazon Chronos Bolt
+title: AWS Chronos Bolt
+app_port: 8501
 emoji: 👁
 colorFrom: gray
 colorTo: purple
 sdk: docker
 pinned: false
 license: mit
-short_description: Large Time-Series Models Amazon 
+models: [amazon/chronos-bolt-base]
+short_description: AWS Community Day Ecuador 2025
 ---
 
 # Modelos Fundacionales para Series de tiempo
