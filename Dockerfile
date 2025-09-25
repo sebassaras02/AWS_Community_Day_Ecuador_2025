@@ -3,8 +3,8 @@ FROM python:3.11-slim
 WORKDIR /app
 COPY requirements.txt requirements.txt
 COPY pyproject.toml pyproject.toml
-COPY src/ src/
-COPY data/ /data
+COPY src/ ./src
+COPY data/ ./data
 
 RUN pip install uv
 RUN uv pip install --system -r requirements.txt
